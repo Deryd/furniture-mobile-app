@@ -1,12 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-//import { IHomePage } from '../src/Interfaces'
+import { CommentList } from '../src/CommentList'
 
 export const DetailsScreen = ({ route, navigation }) => {
     const { itemId, itemTitle } = route.params;
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.default}>
             <Text>{itemTitle} (id : {JSON.stringify(itemId)})</Text>
+            <CommentList></CommentList>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    default: {
+        flex: 1,
+    }
+
+})
